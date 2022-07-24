@@ -1,5 +1,5 @@
 import { useHttp } from 'utils/http';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 import { Person } from 'gen/ts/api/project/v1/project';
 
 export const usePeople = (param?: Partial<Person>) => {

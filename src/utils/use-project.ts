@@ -1,5 +1,5 @@
 import { useHttp } from 'utils/http';
-import { QueryKey, useMutation, useQuery } from '@tanstack/react-query';
+import { QueryKey, useMutation, useQuery } from 'react-query';
 import { useEditConfig, useAddConfig, useDeleteConfig } from 'utils/use-optimistic-update';
 import {
   ListRequest,
