@@ -1,0 +1,10 @@
+.navIconLink {
+  .anticon {
+    font-size: 2.4rem;
+    vertical-align: top;
+    transition: transform 0.4s;
+  }
+  &:hover > .anticon {
+    transform: scale(1.3);
+  }
+}

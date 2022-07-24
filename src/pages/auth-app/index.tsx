@@ -61,11 +61,11 @@ const PageHeader = () => {
       </HeaderLeft>
       <HeaderRight>
         <Button
-          className='iconBtn'
+          className='navIconLink'
           type='link'
-          icon={<PancakeIcon style={{ verticalAlign: 'top', fontSize: '24px' }} />}
           style={{ fontWeight: '600', color: 'rgb(122, 110, 170)' }}
         >
+          <PancakeIcon />
           $3.436
         </Button>
         <Button type='link' icon={<SearchOutlined />}>
