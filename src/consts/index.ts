@@ -2,6 +2,7 @@ export const AuthNavItems = [
   {
     label: 'Trade',
     key: 'Trade',
+    popupOffset: [-16, 5],
     children: [
       {
         label: 'Swap',
@@ -24,6 +25,7 @@ export const AuthNavItems = [
   {
     label: 'Earn',
     key: 'Earn',
+    popupOffset: [-16, 5],
     children: [
       {
         label: 'Farms',
@@ -38,6 +40,7 @@ export const AuthNavItems = [
   {
     label: 'Win',
     key: 'Win',
+    popupOffset: [-16, 5],
     children: [
       {
         label: 'Trading Competition',
@@ -56,6 +59,7 @@ export const AuthNavItems = [
   {
     label: 'NFT',
     key: 'NFT',
+    popupOffset: [-16, 5],
     children: [
       {
         label: 'Overview',
@@ -107,7 +111,8 @@ export const AuthNavItems = [
   // },
   {
     label: '•••',
-    key: '···',
+    key: '...',
+    popupOffset: [-16, 5],
     children: [
       {
         label: 'info',
