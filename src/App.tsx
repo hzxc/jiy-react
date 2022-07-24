@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { useAuth } from 'pages/context/auth-context';
 import { FullPageLoading } from 'components/lib';
 import { ConfigProvider } from 'antd';
