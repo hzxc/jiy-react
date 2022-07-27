@@ -3,7 +3,6 @@ import * as auth from '../auth-provider';
 import { useAsync } from '../../utils/use-async';
 import { FullPageErrorFallback, FullPageLoading } from 'components/lib';
 import { User } from 'types/users';
-import { http } from 'utils/http';
 
 interface AuthForm {
   username: string;
@@ -18,18 +17,18 @@ interface AuthContextProps {
   prefixCls: string;
 }
 
-const bootstrapUser = async () => {
-  let user = null;
-  const token = auth.getToken();
-  // console.log(token);
-  if (token) {
-    const data = await http('HelloService', 'me', {
-      token,
-    });
-    user = data;
-  }
-  return user;
-};
+// const bootstrapUser = async () => {
+//   let user = null;
+//   const token = auth.getToken();
+//   // console.log(token);
+//   if (token) {
+//     const data = await http('HelloService', 'me', {
+//       token,
+//     });
+//     user = data;
+//   }
+//   return user;
+// };
 
 const AuthContext = React.createContext<AuthContextProps | undefined>(undefined);
 AuthContext.displayName = 'AuthContext';
@@ -65,10 +64,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const prefix = auth.getPrefixCls();
     setPrefixCls(prefix ? prefix : 'ant');
-    run(bootstrapUser());
+    // run(bootstrapUser());
   }, [run]);
 
-  if (isIdle || isLoading) {
+  // if (isIdle || isLoading) {
+  if (isLoading) {
     return <FullPageLoading />;
   }
   if (isError) {
