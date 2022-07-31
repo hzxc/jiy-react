@@ -1,14 +1,15 @@
+import { Container, Footer, Main } from './index.style';
 import './styles/index.scss';
 
 export const Pancake = () => {
   return (
-    <div className='pancake-container'>
+    <Container>
       <header className='pancake-header'>
         <div>header left</div>
         <div>header right</div>
       </header>
-      <main className='pancake-main'>main</main>
-      <footer className='pancake-footer'>footer</footer>
-    </div>
+      <Main>main</Main>
+      <Footer>footer</Footer>
+    </Container>
   );
 };
