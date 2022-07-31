@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Button, Dropdown, Menu } from 'antd';
-import { Row } from 'components/lib';
+import { Row } from 'components/flex';
 
 export const PanLink = styled(Button)`
   color: rgb(118, 69, 217);

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { ButtonNoPadding, ErrorBox, Row } from 'components/lib';
+import { ButtonNoPadding, ErrorBox } from 'components/lib';
+import { Row } from 'components/flex';
 // import { CreateRequest } from 'gen/ts/api/project/v1/project';
 import React from 'react';
 import { useDebounce } from 'utils';
@@ -32,7 +33,7 @@ export const Projects = () => {
     // <Profiler id={'project list'}></Profiler>
     <Container>
       <ProjectModal />
-      <Row between={true}>
+      <Row justifyContent='space-between'>
         <h1>Projects</h1>
         <ButtonNoPadding onClick={open} type={'link'}>
           Create

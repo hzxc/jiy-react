@@ -17,18 +17,25 @@ interface AuthContextProps {
   prefixCls: string;
 }
 
-// const bootstrapUser = async () => {
-//   let user = null;
-//   const token = auth.getToken();
-//   // console.log(token);
-//   if (token) {
-//     const data = await http('HelloService', 'me', {
-//       token,
-//     });
-//     user = data;
-//   }
-//   return user;
-// };
+const bootstrapUser = async () => {
+  let user = null;
+  const token = auth.getToken();
+  if (token) {
+    user = {
+      id: 1,
+      name: 'anonymous',
+      token: token,
+      expiresAt: 0,
+    };
+  }
+  // if (token) {
+  //   const data = await http('HelloService', 'me', {
+  //     token,
+  //   });
+  //   user = data;
+  // }
+  return user;
+};
 
 const AuthContext = React.createContext<AuthContextProps | undefined>(undefined);
 AuthContext.displayName = 'AuthContext';
@@ -38,9 +45,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const {
     run,
     error,
+    isIdle,
     isLoading,
     isError,
-    isIdle,
     data: user,
     setData: setUser,
   } = useAsync<User | null>();
@@ -64,11 +71,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const prefix = auth.getPrefixCls();
     setPrefixCls(prefix ? prefix : 'ant');
-    // run(bootstrapUser());
+    run(bootstrapUser());
   }, [run]);
 
-  // if (isIdle || isLoading) {
-  if (isLoading) {
+  if (isIdle || isLoading) {
+    // if (isLoading) {
     return <FullPageLoading />;
   }
   if (isError) {

@@ -46,7 +46,7 @@ const PageHeader = () => {
   };
 
   return (
-    <Header between={true}>
+    <Header justifyContent='space-between'>
       <HeaderLeft gap={2.4}>
         {/* <Button type={'link'} onClick={resetRoute}>
           <SoftwareLogo width={'18rem'} color={'rgb(38, 132, 255)'} />
