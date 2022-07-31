@@ -61,7 +61,7 @@ const PageHeader = () => {
       </HeaderLeft>
       <HeaderRight>
         <Button
-          className='navIconLink'
+          className='nav-icon-link'
           type='link'
           style={{ fontWeight: '600', color: 'rgb(122, 110, 170)' }}
         >
