@@ -1,4 +1,4 @@
-export const AuthNavItems = [
+export const NavItems = [
   {
     label: 'Trade',
     key: 'Trade',

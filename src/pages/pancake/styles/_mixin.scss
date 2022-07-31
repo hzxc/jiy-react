@@ -1,0 +1,21 @@
+@mixin flex-row($margin-right: 0) {
+  display: flex;
+  align-items: center;
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: $margin-right;
+  }
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

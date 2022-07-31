@@ -10,7 +10,7 @@ import { Project } from 'pages/projects/project';
 import { TestDynamicTheme } from 'pages/test/dynamic-theme';
 import { Test } from 'pages/test';
 import { Link } from 'react-router-dom';
-import { AuthNavItems } from 'consts';
+import { NavItems } from 'consts';
 
 import { Container, Main, Header, HeaderLeft, HeaderRight, Nav, PanMenu } from './index.style';
 import { PancakeIcon } from 'components/pancake-icon';
@@ -37,7 +37,7 @@ function AuthApp() {
 }
 
 const PageHeader = () => {
-  const items: MenuProps['items'] = AuthNavItems;
+  const items: MenuProps['items'] = NavItems;
 
   const [current, setCurrent] = useState('Swap');
   const onClick: MenuProps['onClick'] = (e) => {
