@@ -118,3 +118,22 @@ export const MenuItems = [
     ],
   },
 ];
+
+export const MenuBarItems = [
+  {
+    label: 'Swap',
+    key: 'Swap',
+  },
+  {
+    label: 'Limit',
+    key: 'Limit',
+  },
+  {
+    label: 'Liquidity',
+    key: 'Liquidity',
+  },
+  {
+    label: 'Perpetual',
+    key: 'Perpetual',
+  },
+];

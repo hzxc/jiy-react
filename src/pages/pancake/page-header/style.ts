@@ -34,7 +34,6 @@ export const HeaderRight = styled(Row)`
 export const Nav = styled(Menu)`
   width: 32rem;
   border-bottom: none;
-  color: rgb(122, 110, 170);
   font-weight: 600;
   font-size: 1.6rem;
 
@@ -51,7 +50,7 @@ export const Nav = styled(Menu)`
   }
 
   > .ant-menu-submenu:hover {
-    background: rgb(239, 244, 245);
+    background-color: rgb(239, 244, 245);
   }
 
   > .ant-menu-submenu-selected span {
