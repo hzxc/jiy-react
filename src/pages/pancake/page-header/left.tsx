@@ -10,7 +10,9 @@ export const Left = () => {
 
   const [current, setCurrent] = useState('Swap');
   const onClick: MenuProps['onClick'] = (e) => {
-    setCurrent(e.key);
+    if (e.key) {
+      setCurrent(e.key);
+    }
   };
   return (
     <HeaderLeft gap={2.4}>
