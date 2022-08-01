@@ -27,6 +27,7 @@ export const MenuItems = [
     label: 'Earn',
     key: 'Earn',
     popupOffset: [-16, 5],
+    popupClassName: 'pancake-menu-popup',
     children: [
       {
         label: 'Farms',
@@ -42,6 +43,7 @@ export const MenuItems = [
     label: 'Win',
     key: 'Win',
     popupOffset: [-16, 5],
+    popupClassName: 'pancake-menu-popup',
     children: [
       {
         label: 'Trading Competition',
@@ -61,6 +63,7 @@ export const MenuItems = [
     label: 'NFT',
     key: 'NFT',
     popupOffset: [-16, 5],
+    popupClassName: 'pancake-menu-popup',
     children: [
       {
         label: 'Overview',
@@ -80,6 +83,7 @@ export const MenuItems = [
     label: '•••',
     key: '...',
     popupOffset: [-16, 5],
+    popupClassName: 'pancake-menu-popup',
     children: [
       {
         label: 'info',

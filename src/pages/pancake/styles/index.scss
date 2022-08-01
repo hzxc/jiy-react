@@ -5,10 +5,24 @@
 
 .pancake-menu-popup.ant-menu-submenu-popup {
   width: 28rem;
-  font-size: 1.6rem;
-  color: rgb(122, 110, 170);
+  color: $pancake-text-color;
   font-weight: 600;
   .ant-menu-item-selected {
     font-weight: 700;
+    color: $pancake-text-highlight-color;
+  }
+  .ant-menu-item-active:hover {
+    background: rgb(239 244 245);
+  }
+  > .ant-menu {
+    > .ant-menu-item:not(:first-child) {
+      margin-top: 0;
+    }
+    > .ant-menu-item:not(:last-child) {
+      margin-bottom: 0;
+    }
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    border: 1px solid rgb(231 227 235);
   }
 }
