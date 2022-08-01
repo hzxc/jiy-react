@@ -9,25 +9,52 @@ export const Container = styled(Column)`
   height: 100vh;
 `;
 
-export const NavBar = styled(Row)`
+export const NavBarContainer = styled(Row)`
   align-items: center;
   justify-content: center;
 `;
 
-export const MenuBar = styled(Menu)`
+export const NavBar = styled(Menu)`
   font-weight: 600;
   font-size: 1.6rem;
-  width: 37rem;
+  /* width: 37rem; */
   * {
     color: rgb(122, 110, 170);
   }
 
   > .ant-menu-item {
-    /* border-radius: 2rem; */
-    /* padding: 0 !important; */
-    /* margin-right: 2rem; */
+    padding: 0 !important;
+
+    &:not(:nth-last-of-type(2)) {
+      margin-right: 2rem;
+    }
+  }
+
+  > .ant-menu-item:hover {
+    background-color: rgb(239, 244, 245);
+  }
+
+  /* > .ant-menu-item:not(.ant-menu-item-selected) {
     &::after {
-      border-bottom: 4px solid rgb(31, 199, 212);
+      display: none;
+    }
+  } */
+
+  > .ant-menu-item {
+    &::after {
+      border-bottom: none !important;
+    }
+  }
+
+  > .ant-menu-item-selected {
+    &:after {
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      background-color: rgb(31, 199, 212);
+      /* border-radius: 2px 2px 0px 0px; */
     }
   }
 

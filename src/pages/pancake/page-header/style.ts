@@ -32,10 +32,12 @@ export const HeaderRight = styled(Row)`
 `;
 
 export const Nav = styled(Menu)`
-  width: 32rem;
+  flex-grow: 1;
+  /* width: 32rem; */
   border-bottom: none;
   font-weight: 600;
   font-size: 1.6rem;
+  margin-right: 0;
 
   * {
     color: rgb(122, 110, 170);

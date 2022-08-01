@@ -1,4 +1,4 @@
-import { Container, Footer, Main, MenuBar, NavBar } from './style';
+import { Container, Footer, Main, NavBar, NavBarContainer } from './style';
 import { PageHeader } from './page-header';
 import './styles/index.scss';
 import { MenuProps } from 'antd';
@@ -16,9 +16,9 @@ export const Pancake = () => {
   return (
     <Container>
       <PageHeader></PageHeader>
-      <NavBar>
-        <MenuBar onClick={onClick} selectedKeys={[current]} mode='horizontal' items={items} />
-      </NavBar>
+      <NavBarContainer>
+        <NavBar onClick={onClick} selectedKeys={[current]} mode='horizontal' items={items} />
+      </NavBarContainer>
       <Main>main</Main>
       <Footer>footer</Footer>
     </Container>
