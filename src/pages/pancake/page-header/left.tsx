@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { HeaderLeft, HeaderMenu } from './style';
+import { HeaderLeft, Nav } from './style';
 import { ReactComponent as LogoText } from 'assets/pancake/logo.text.svg';
 import { MenuProps } from 'antd';
 import { MenuItems } from './consts';
@@ -17,7 +17,7 @@ export const Left = () => {
       <Link to='/'>
         <LogoText width={'16rem'} />
       </Link>
-      <HeaderMenu onClick={onClick} selectedKeys={[current]} mode='horizontal' items={items} />
+      <Nav onClick={onClick} selectedKeys={[current]} mode='horizontal' items={items} />
     </HeaderLeft>
   );
 };

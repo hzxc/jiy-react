@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Row } from 'components/flex';
-import { Button, Dropdown, Menu } from 'antd';
+import { Menu } from 'antd';
 
 export const Header = styled(Row)`
   height: 5.6rem;
@@ -31,29 +31,31 @@ export const HeaderRight = styled(Row)`
   }
 `;
 
-export const Nav = styled.div`
-  width: 34rem;
-`;
-
-export const HeaderMenu = styled(Menu)`
-  width: 34rem;
+export const Nav = styled(Menu)`
+  width: 32rem;
   border-bottom: none;
   color: rgb(122, 110, 170);
   font-weight: 600;
   font-size: 1.6rem;
-  > .ant-menu-submenu-active:hover {
-    background: rgb(239, 244, 245);
-  }
 
-  > .ant-menu-submenu-active {
+  * {
+    color: rgb(122, 110, 170);
   }
 
   > .ant-menu-submenu {
     border-radius: 2rem;
+    padding: 0 16px !important;
+    &::after {
+      display: none;
+    }
   }
 
-  > .ant-menu-submenu-selected {
+  > .ant-menu-submenu:hover {
+    background: rgb(239, 244, 245);
+  }
+
+  > .ant-menu-submenu-selected span {
     font-weight: 700;
-    color: rgb(118, 69, 217) !important;
+    color: rgb(118, 69, 217);
   }
 `;
