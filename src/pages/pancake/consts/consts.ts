@@ -119,7 +119,7 @@ export const MenuItems = [
   },
 ];
 
-export const MenuBarItems = [
+export const NavBarItems = [
   {
     label: 'Swap',
     key: 'Swap',

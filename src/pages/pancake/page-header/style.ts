@@ -32,8 +32,7 @@ export const HeaderRight = styled(Row)`
 `;
 
 export const Nav = styled(Menu)`
-  flex-grow: 1;
-  /* width: 32rem; */
+  width: 33rem;
   border-bottom: none;
   font-weight: 600;
   font-size: 1.6rem;
