@@ -1,13 +1,11 @@
-import { Container, Footer, Main } from './index.style';
+import { Container, Footer, Main } from './style';
+import { PageHeader } from './page-header';
 import './styles/index.scss';
 
 export const Pancake = () => {
   return (
     <Container>
-      <header className='pancake-header'>
-        <div>header left</div>
-        <div>header right</div>
-      </header>
+      <PageHeader></PageHeader>
       <Main>main</Main>
       <Footer>footer</Footer>
     </Container>
