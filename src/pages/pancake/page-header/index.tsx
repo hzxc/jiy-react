@@ -1,5 +1,4 @@
-import { Header, HeaderLeft } from './style';
-import { Link } from 'react-router-dom';
+import { Header } from './style';
 import { Right } from './right';
 import { Left } from './left';
 
