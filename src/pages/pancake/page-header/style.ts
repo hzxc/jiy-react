@@ -45,11 +45,15 @@ export const HeaderMenu = styled(Menu)`
     background: rgb(239, 244, 245);
   }
 
+  > .ant-menu-submenu-active {
+  }
+
   > .ant-menu-submenu {
     border-radius: 2rem;
   }
 
   > .ant-menu-submenu-selected {
     font-weight: 700;
+    color: rgb(118, 69, 217) !important;
   }
 `;
