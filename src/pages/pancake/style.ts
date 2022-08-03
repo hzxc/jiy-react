@@ -28,6 +28,24 @@ export const NavBar = styled(Menu)`
     &:not(:nth-last-of-type(2)) {
       margin-right: 3rem;
     }
+
+    &:nth-last-of-type(2) {
+      > .anticon {
+        margin-left: 0.4rem;
+      }
+      > .ant-menu-title-content {
+        margin-left: 0;
+        float: left;
+      }
+    }
+
+    &::after {
+      border-bottom: none !important;
+    }
+
+    > .anticon {
+      font-size: 2rem;
+    }
   }
 
   > .ant-menu-item:hover {
@@ -39,12 +57,6 @@ export const NavBar = styled(Menu)`
       display: none;
     }
   } */
-
-  > .ant-menu-item {
-    &::after {
-      border-bottom: none !important;
-    }
-  }
 
   > .ant-menu-item-selected {
     &:after {

@@ -1,3 +1,5 @@
+import { PancakePerpetualIcon } from '../components/pancake-icon';
+
 export const MenuItems = [
   {
     label: 'Trade',
@@ -135,5 +137,6 @@ export const NavBarItems = [
   {
     label: 'Perpetual',
     key: 'Perpetual',
+    icon: <PancakePerpetualIcon />,
   },
 ];
