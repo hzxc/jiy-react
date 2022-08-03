@@ -85,7 +85,8 @@ export const Main = styled(Row)`
   align-items: flex-start;
   justify-content: center;
   padding: 32px 32px 0px;
-  background-color: aliceblue;
+  background: linear-gradient(139.73deg, rgb(229, 253, 255) 0%, rgb(243, 239, 255) 100%);
+  background-image: linear-gradient(139.73deg, rgb(229, 253, 255) 0%, rgb(243, 239, 255) 100%);
 `;
 
 export const Footer = styled(Row)`
