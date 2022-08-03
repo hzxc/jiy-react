@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Card } from 'antd';
-import { Row } from 'components/flex';
+import { Column, Row } from 'components/flex';
 
 export const SwapCard = styled(Card)`
   border-radius: 2.4rem;
@@ -44,7 +44,8 @@ export const SwapHeaderDesc = styled(Row)`
   border-bottom: 1px solid rgb(231, 227, 235);
 `;
 
-export const SwapContent = styled(Row)`
+export const SwapContent = styled(Column)`
+  align-items: flex-start;
   padding-top: 2rem;
   margin: -0.4rem;
 `;

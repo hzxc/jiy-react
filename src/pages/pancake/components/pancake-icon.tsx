@@ -6,6 +6,8 @@ import { ReactComponent as PancakeHistoryIconSvg } from 'assets/pancake/history.
 import { ReactComponent as PancakePerpetualIconSvg } from 'assets/pancake/perpetual.svg';
 import { ReactComponent as PancakeArrowIconSvg } from 'assets/pancake/arrow.svg';
 import { ReactComponent as PancakeBNBIconSvg } from 'assets/pancake/bnb.svg';
+import { ReactComponent as PancakeExIconSvg } from 'assets/pancake/ex.svg';
+import { ReactComponent as PancakeEx1IconSvg } from 'assets/pancake/ex1.svg';
 
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 import Icon from '@ant-design/icons';
@@ -40,4 +42,12 @@ export const PancakeArrowIcon = (props: Partial<CustomIconComponentProps>) => (
 
 export const PancakeBNBIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={PancakeBNBIconSvg} {...props} />
+);
+
+export const PancakeExIcon = (props: Partial<CustomIconComponentProps>) => (
+  <Icon component={PancakeExIconSvg} {...props} />
+);
+
+export const PancakeEx1Icon = (props: Partial<CustomIconComponentProps>) => (
+  <Icon component={PancakeEx1IconSvg} {...props} />
 );

@@ -1,6 +1,9 @@
-import { Button, Input } from 'antd';
+import { Button, Input, InputRef } from 'antd';
+import { useRef } from 'react';
+
 import {
   PancakeChartIcon,
+  PancakeExIcon,
   PancakeHistoryIcon,
   PancakeRefreshIcon,
   PancakeSettingIcon,
@@ -9,6 +12,9 @@ import { TokenButton } from '../components/token-button';
 import { SwapCard, SwapContent, SwapHeader, SwapHeaderDesc } from './style';
 
 export const Swap = () => {
+  const inputRef = useRef<InputRef>(null);
+  // inputRef.current!.focus({ cursor: 'end' });
+
   return (
     <SwapCard>
       <SwapHeader>
@@ -29,7 +35,10 @@ export const Swap = () => {
       <SwapHeaderDesc>Trade tokens in an instant</SwapHeaderDesc>
       <SwapContent>
         <TokenButton />
-        <Input placeholder='Basic usage' />
+        <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+        <Button type='link'>
+          <PancakeExIcon />
+        </Button>
       </SwapContent>
     </SwapCard>
   );
