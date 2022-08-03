@@ -15,6 +15,7 @@ export const NavBarContainer = styled(Row)`
 `;
 
 export const NavBar = styled(Menu)`
+  height: 4.3rem;
   font-weight: 600;
   font-size: 1.6rem;
   /* width: 37rem; */
