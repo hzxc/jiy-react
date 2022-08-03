@@ -45,5 +45,6 @@ export const SwapHeaderDesc = styled(Row)`
 `;
 
 export const SwapContent = styled(Row)`
-  padding-top: 2.4rem;
+  padding-top: 2rem;
+  margin: -0.4rem;
 `;
