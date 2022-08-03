@@ -26,7 +26,12 @@ export const Swap = () => {
         </Button>
       </SwapHeader>
       <SwapHeaderDesc>Trade tokens in an instant</SwapHeaderDesc>
-      <SwapContent>SwapContent</SwapContent>
+      <SwapContent>
+        <Button type='link'>
+          <PancakeHistoryIcon />
+          BNB
+        </Button>
+      </SwapContent>
     </SwapCard>
   );
 };
