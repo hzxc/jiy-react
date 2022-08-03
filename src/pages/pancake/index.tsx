@@ -3,6 +3,7 @@ import { PageHeader } from './page-header';
 import './styles/index.scss';
 import { MenuProps } from 'antd';
 import { NavBarItems } from './consts/consts';
+import { Swap } from './swap';
 
 export const Pancake = () => {
   const items: MenuProps['items'] = NavBarItems;
@@ -13,7 +14,9 @@ export const Pancake = () => {
       <NavBarContainer>
         <NavBar defaultSelectedKeys={['Swap']} mode='horizontal' items={items} />
       </NavBarContainer>
-      <Main>main</Main>
+      <Main>
+        <Swap />
+      </Main>
       <Footer>footer</Footer>
     </Container>
   );

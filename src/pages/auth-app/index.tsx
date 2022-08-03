@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 import { NavItems } from 'consts';
 
 import { Container, Main, Header, HeaderLeft, HeaderRight, Nav, PanMenu } from './index.style';
-import { PancakeIcon } from 'components/pancake-icon';
 
 function AuthApp() {
   return (
@@ -60,14 +59,14 @@ const PageHeader = () => {
         </Nav>
       </HeaderLeft>
       <HeaderRight>
-        <Button
+        {/* <Button
           className='nav-icon-link'
           type='link'
           style={{ fontWeight: '600', color: 'rgb(122, 110, 170)' }}
         >
           <PancakeIcon />
           $3.436
-        </Button>
+        </Button> */}
         <Button type='link' icon={<SearchOutlined />}>
           Search
         </Button>

@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { PancakeIcon } from 'components/pancake-icon';
+import { PancakeIcon } from 'pages/pancake/components/pancake-icon';
 import { HeaderRight } from './style';
 import { SearchOutlined } from '@ant-design/icons';
 

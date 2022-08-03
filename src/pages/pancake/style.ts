@@ -26,7 +26,7 @@ export const NavBar = styled(Menu)`
     padding: 0 !important;
 
     &:not(:nth-last-of-type(2)) {
-      margin-right: 2rem;
+      margin-right: 3rem;
     }
   }
 
@@ -70,6 +70,9 @@ export const NavBar = styled(Menu)`
 
 export const Main = styled(Row)`
   flex-grow: 1;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 32px 0px;
   background-color: aliceblue;
 `;
 
