@@ -11,7 +11,7 @@ import {
   PancakeRefreshIcon,
   PancakeSettingIcon,
 } from '../components/pancake-icon';
-import { SwapCard, SwapContent, SwapHeader, SwapHeaderDesc } from './style';
+import { ExButton, SwapCard, SwapContent, SwapHeader, SwapHeaderDesc } from './style';
 
 export const Swap = () => {
   return (
@@ -29,9 +29,7 @@ export const Swap = () => {
           BNB
         </IconButton>
         <Input style={{ textAlign: 'right' }} placeholder='0.0' />
-        <Button type='link'>
-          <PancakeExIcon />
-        </Button>
+        <ExButton icon={<PancakeExIcon />}></ExButton>
       </SwapContent>
     </SwapCard>
   );

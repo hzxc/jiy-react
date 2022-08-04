@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Card } from 'antd';
 import { Column, Row } from 'components/flex';
+import { IconButton } from '../components/icon-button';
 
 export const SwapCard = styled(Card)`
   border-radius: 2.4rem;
@@ -40,5 +41,20 @@ export const SwapHeaderDesc = styled(Row)`
 export const SwapContent = styled(Column)`
   align-items: flex-start;
   padding-top: 2rem;
-  margin: -0.4rem;
+  margin: 0 -0.4rem;
+`;
+
+export const ExButton = styled(IconButton)`
+  padding: 0 0.3rem;
+  border-radius: 16px;
+  background-color: rgb(238, 234, 244);
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  box-shadow: rgb(0 0 0 / 10%) 0px -2px 0px inset;
+  > .anticon {
+    color: rgb(57, 203, 216);
+  }
+  &:hover {
+    background-color: rgb(31, 199, 212);
+  }
 `;
