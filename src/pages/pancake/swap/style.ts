@@ -39,7 +39,8 @@ export const SwapHeaderDesc = styled(Row)`
 `;
 
 export const SwapContent = styled(Column)`
-  align-items: flex-start;
+  align-items: stretch;
+  gap: 0.8rem;
   padding-top: 2rem;
   margin: 0 -0.4rem;
 `;

@@ -1,4 +1,5 @@
 import { Button, Input, InputRef } from 'antd';
+import { Row } from 'components/flex';
 import { useRef } from 'react';
 import { IconButton } from '../components/icon-button';
 
@@ -25,11 +26,21 @@ export const Swap = () => {
       </SwapHeader>
       <SwapHeaderDesc>Trade tokens in an instant</SwapHeaderDesc>
       <SwapContent>
-        <IconButton icon={<PancakeBNBIcon />} endICon={<PancakeArrowIcon />}>
-          BNB
-        </IconButton>
-        <Input style={{ textAlign: 'right' }} placeholder='0.0' />
-        <ExButton icon={<PancakeExIcon />}></ExButton>
+        <div>
+          <IconButton icon={<PancakeBNBIcon />} endICon={<PancakeArrowIcon />}>
+            BNB
+          </IconButton>
+          <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+        </div>
+        <Row justifyContent={'center'}>
+          <ExButton icon={<PancakeExIcon />}></ExButton>
+        </Row>
+        <div>
+          <IconButton icon={<PancakeBNBIcon />} endICon={<PancakeArrowIcon />}>
+            BNB
+          </IconButton>
+          <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+        </div>
       </SwapContent>
     </SwapCard>
   );
