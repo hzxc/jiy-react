@@ -5,7 +5,8 @@ import { IconButton } from '../components/icon-button';
 
 export const SwapCard = styled(Card)`
   border-radius: 2.4rem;
-  border-bottom: 1px solid rgb(231, 227, 235);
+  border: 1px solid rgb(231, 227, 235);
+  border-bottom: 0.3rem solid rgb(231, 227, 235);
   width: 32.8rem;
 `;
 
