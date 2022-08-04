@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Button } from 'antd';
 
-export const PanButton = styled(Button)`
+export const SdIconButton = styled(Button)`
   padding: 0 0.5rem;
   svg {
     vertical-align: top;
@@ -17,7 +17,7 @@ export const PanButton = styled(Button)`
     font-weight: 700;
   }
 
-  > span:last-of-type {
+  > span:nth-of-type(3) {
     margin-left: 0;
   }
 

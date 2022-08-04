@@ -14,14 +14,7 @@ export const SwapHeader = styled(Row)`
   > button {
     padding: 0 3px 0;
     .anticon {
-      font-size: 2.4rem;
-      vertical-align: top;
-      transition: transform 0.4s;
       color: rgb(122, 110, 170);
-
-      &:hover {
-        opacity: 0.65;
-      }
     }
   }
 
