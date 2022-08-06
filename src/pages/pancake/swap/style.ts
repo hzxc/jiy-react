@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { Card } from 'antd';
+import { Button, Card } from 'antd';
 import { Column, Row } from 'components/flex';
-import { IconButton } from '../components/icon-button';
+import { IconButton } from '../components/button';
 
 export const SwapCard = styled(Card)`
   border-radius: 2.4rem;
@@ -41,6 +41,7 @@ export const SwapHeaderDesc = styled(Row)`
 
 export const SwapContent = styled(Column)`
   align-items: stretch;
+  font-size: 1rem;
   gap: 0.8rem;
   padding-top: 2rem;
   margin: 0 -0.4rem;
@@ -60,3 +61,24 @@ export const ExButton = styled(IconButton)`
     background-color: rgb(31, 199, 212);
   }
 `;
+
+export const SwapLabel = styled(Row)`
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.6rem;
+  > span {
+    font-weight: 700;
+  }
+
+  > span:first-of-type {
+    color: rgb(118, 69, 217);
+    font-size: 1.2rem;
+  }
+
+  > span:last-of-type {
+    color: rgb(31, 199, 212);
+    font-size: 1.6rem;
+  }
+`;
+
+export const ActionButton = styled(Button)``;

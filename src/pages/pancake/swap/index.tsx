@@ -1,7 +1,6 @@
-import { Button, Input, InputRef } from 'antd';
+import { Input } from 'antd';
 import { Row } from 'components/flex';
-import { useRef } from 'react';
-import { IconButton } from '../components/icon-button';
+import { IconButton } from '../components/button';
 
 import {
   PancakeArrowIcon,
@@ -12,7 +11,15 @@ import {
   PancakeRefreshIcon,
   PancakeSettingIcon,
 } from '../components/pancake-icon';
-import { ExButton, SwapCard, SwapContent, SwapHeader, SwapHeaderDesc } from './style';
+import {
+  ActionButton,
+  ExButton,
+  SwapCard,
+  SwapContent,
+  SwapHeader,
+  SwapHeaderDesc,
+  SwapLabel,
+} from './style';
 
 export const Swap = () => {
   return (
@@ -40,6 +47,15 @@ export const Swap = () => {
             BNB
           </IconButton>
           <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+        </div>
+        <SwapLabel>
+          <span>Slippage Tolerance</span>
+          <span>0.5%</span>
+        </SwapLabel>
+        <div>
+          <ActionButton block type='primary'>
+            ActionButton
+          </ActionButton>
         </div>
       </SwapContent>
     </SwapCard>
