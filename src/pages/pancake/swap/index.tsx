@@ -54,7 +54,7 @@ export const Swap = () => {
         </SwapLabel>
         <div>
           <ActionButton block type='primary'>
-            ActionButton
+            Connect Wallet
           </ActionButton>
         </div>
       </SwapContent>

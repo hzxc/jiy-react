@@ -6,7 +6,7 @@ import { IconButton } from '../components/button';
 export const SwapCard = styled(Card)`
   border-radius: 2.4rem;
   border: 1px solid rgb(231, 227, 235);
-  border-bottom: 0.3rem solid rgb(231, 227, 235);
+  border-bottom: 0.4rem solid rgb(231, 227, 235);
   width: 32.8rem;
 `;
 
@@ -81,4 +81,28 @@ export const SwapLabel = styled(Row)`
   }
 `;
 
-export const ActionButton = styled(Button)``;
+export const ActionButton = styled(Button)`
+  margin-top: 5rem;
+  font-size: 1.6rem;
+  height: 48px;
+  border: 0;
+  border-color: rgb(31, 199, 212) !important;
+  background: rgb(31, 199, 212) !important;
+  border-radius: 16px;
+  box-shadow: 0px -1px 0px 0px rgb(14 14 44 / 40%) inset;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+
+  > span {
+    font-weight: 700;
+  }
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+`;
