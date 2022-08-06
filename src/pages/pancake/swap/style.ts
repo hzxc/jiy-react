@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Button, Card } from 'antd';
+import { Card, Input } from 'antd';
 import { Column, Row } from 'components/flex';
 import { IconButton } from '../components/button';
 
@@ -8,6 +8,10 @@ export const SwapCard = styled(Card)`
   border: 1px solid rgb(231, 227, 235);
   border-bottom: 0.4rem solid rgb(231, 227, 235);
   width: 32.8rem;
+
+  > .ant-card-body {
+    padding-bottom: 1.6rem;
+  }
 `;
 
 export const SwapHeader = styled(Row)`
@@ -41,13 +45,13 @@ export const SwapHeaderDesc = styled(Row)`
 
 export const SwapContent = styled(Column)`
   align-items: stretch;
-  font-size: 1rem;
+  font-size: 1.6rem;
   gap: 0.8rem;
   padding-top: 2rem;
   margin: 0 -0.4rem;
 `;
 
-export const ExButton = styled(IconButton)`
+export const UpDownButton = styled(IconButton)`
   padding: 0 0.3rem;
   border-radius: 16px;
   background-color: rgb(238, 234, 244);
@@ -57,8 +61,36 @@ export const ExButton = styled(IconButton)`
   > .anticon {
     color: rgb(57, 203, 216);
   }
+
+  > span:last-of-type {
+    display: none;
+  }
+
   &:hover {
     background-color: rgb(31, 199, 212);
+    > span:first-of-type {
+      display: none;
+    }
+    > span:last-of-type {
+      display: inline-block;
+      margin-left: 0;
+    }
+    > .anticon {
+      color: #fff;
+    }
+  }
+  &:active {
+    background-color: rgb(31, 199, 212);
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+    > .anticon {
+      color: #fff;
+    }
+  }
+
+  &:focus {
+    /* background-color: rgb(238, 234, 244); */
   }
 `;
 
@@ -81,28 +113,26 @@ export const SwapLabel = styled(Row)`
   }
 `;
 
-export const ActionButton = styled(Button)`
-  margin-top: 5rem;
+export const PancakeInput = styled(Input)`
+  border-radius: 1.6rem;
   font-size: 1.6rem;
-  height: 48px;
-  border: 0;
-  border-color: rgb(31, 199, 212) !important;
-  background: rgb(31, 199, 212) !important;
-  border-radius: 16px;
-  box-shadow: 0px -1px 0px 0px rgb(14 14 44 / 40%) inset;
-  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-
-  > span {
-    font-weight: 700;
-  }
-
+  font-weight: 500;
+  text-align: right;
+  color: rgb(40, 13, 95);
+  background-color: rgb(238, 234, 244);
+  box-shadow: 0px 2px 2px -1px rgb(74 74 104 / 10%) inset;
+  height: 6rem;
+  padding-bottom: 2rem;
   &:hover {
-    opacity: 0.65;
+    border-color: #d9d9d9;
+  }
+  &:focus {
+    border-color: #d9d9d9;
+    box-shadow: none;
   }
 
-  &:active {
-    opacity: 0.85;
-    transform: translateY(1px);
-    box-shadow: none;
+  &::placeholder {
+    font-weight: 500;
+    color: rgb(122, 110, 170);
   }
 `;

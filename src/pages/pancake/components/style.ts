@@ -26,3 +26,30 @@ export const SdIconButton = styled(Button)`
     vertical-align: top;
   }
 `;
+
+export const PancakeButton = styled(Button)<{
+  height?: string;
+}>`
+  margin-top: 5rem;
+  font-size: 1.6rem;
+  height: ${(props) => (props.height ? props.height : undefined)};
+  border: 0;
+  border-color: rgb(31, 199, 212) !important;
+  background: rgb(31, 199, 212) !important;
+  border-radius: 16px;
+  box-shadow: 0px -1px 0px 0px rgb(14 14 44 / 40%) inset;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  > span {
+    font-weight: 700;
+  }
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+`;

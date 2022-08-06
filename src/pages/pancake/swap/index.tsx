@@ -1,4 +1,3 @@
-import { Input } from 'antd';
 import { Row } from 'components/flex';
 import { IconButton } from '../components/button';
 
@@ -6,14 +5,16 @@ import {
   PancakeArrowIcon,
   PancakeBNBIcon,
   PancakeChartIcon,
-  PancakeExIcon,
+  PancakeUpDownIcon,
+  PancakeDownIcon,
   PancakeHistoryIcon,
   PancakeRefreshIcon,
   PancakeSettingIcon,
 } from '../components/pancake-icon';
+import { PancakeButton } from '../components/style';
 import {
-  ActionButton,
-  ExButton,
+  UpDownButton,
+  PancakeInput,
   SwapCard,
   SwapContent,
   SwapHeader,
@@ -37,25 +38,25 @@ export const Swap = () => {
           <IconButton icon={<PancakeBNBIcon />} endICon={<PancakeArrowIcon />}>
             BNB
           </IconButton>
-          <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+          <PancakeInput placeholder='0.0' />
         </div>
         <Row justifyContent={'center'}>
-          <ExButton icon={<PancakeExIcon />}></ExButton>
+          <UpDownButton icon={<PancakeDownIcon />} endICon={<PancakeUpDownIcon />}></UpDownButton>
         </Row>
         <div>
           <IconButton icon={<PancakeBNBIcon />} endICon={<PancakeArrowIcon />}>
             BNB
           </IconButton>
-          <Input style={{ textAlign: 'right' }} placeholder='0.0' />
+          <PancakeInput placeholder='0.0' />
         </div>
         <SwapLabel>
           <span>Slippage Tolerance</span>
           <span>0.5%</span>
         </SwapLabel>
         <div>
-          <ActionButton block type='primary'>
+          <PancakeButton block type='primary' height='4.8rem'>
             Connect Wallet
-          </ActionButton>
+          </PancakeButton>
         </div>
       </SwapContent>
     </SwapCard>
