@@ -44,10 +44,10 @@ export const PancakeBNBIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={PancakeBNBIconSvg} {...props} />
 );
 
-export const PancakeExIcon = (props: Partial<CustomIconComponentProps>) => (
+export const PancakeDownIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={PancakeExIconSvg} {...props} />
 );
 
-export const PancakeEx1Icon = (props: Partial<CustomIconComponentProps>) => (
+export const PancakeUpDownIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={PancakeEx1IconSvg} {...props} />
 );
