@@ -1,4 +1,3 @@
-import { Button } from 'antd';
 import {
   PancakeIcon,
   PancakeLangIcon,
@@ -11,10 +10,6 @@ import { HeaderRight } from './style';
 export const Right = () => {
   return (
     <HeaderRight>
-      {/* <Button type='link'>
-        <PancakeIcon />
-        $3.436
-      </Button> */}
       <IconButton icon={<PancakeIcon />}>$3.436</IconButton>
       <IconButton icon={<PancakeLangIcon />}></IconButton>
       <IconButton icon={<PancakeSettingIcon />}></IconButton>
