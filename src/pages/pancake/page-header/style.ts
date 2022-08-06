@@ -14,20 +14,26 @@ export const HeaderLeft = styled(Row)`
   }
 `;
 export const HeaderRight = styled(Row)`
-  span {
-    font-size: 1.6rem;
-    color: rgb(122, 110, 170);
-    font-weight: 600;
-  }
-  > button:first-of-type {
-    .anticon {
-      font-size: 2.4rem; //icon size
-      vertical-align: top;
-      transition: transform 0.4s;
+  > button:not(:last-of-type) {
+    > span {
+      color: rgb(122, 110, 170);
     }
   }
-  &:hover > button:first-of-type > .anticon {
-    transform: scale(1.3);
+
+  > button:first-of-type {
+    .anticon {
+      transition: transform 0.4s;
+    }
+    &:hover {
+      opacity: 1;
+      > .anticon {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  > button:last-of-type {
+    margin-left: 1rem;
   }
 `;
 

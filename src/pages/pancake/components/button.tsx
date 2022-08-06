@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { SdIconButton } from './style';
+import { PancakeIconButton } from './style';
 
 type ButtonProps = React.ComponentProps<typeof Button>;
 
@@ -11,10 +11,10 @@ interface IconButtonProps extends Omit<ButtonProps, 'icon'> {
 export const IconButton = (props: IconButtonProps) => {
   const { icon, endICon, children, type, ...restProps } = props;
   return (
-    <SdIconButton type='link' {...restProps}>
+    <PancakeIconButton type='link' {...restProps}>
       {icon}
       {children}
       {endICon ? endICon : undefined}
-    </SdIconButton>
+    </PancakeIconButton>
   );
 };

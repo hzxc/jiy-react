@@ -6,8 +6,9 @@ import { ReactComponent as PancakeHistoryIconSvg } from 'assets/pancake/history.
 import { ReactComponent as PancakePerpetualIconSvg } from 'assets/pancake/perpetual.svg';
 import { ReactComponent as PancakeArrowIconSvg } from 'assets/pancake/arrow.svg';
 import { ReactComponent as PancakeBNBIconSvg } from 'assets/pancake/bnb.svg';
-import { ReactComponent as PancakeExIconSvg } from 'assets/pancake/ex.svg';
-import { ReactComponent as PancakeEx1IconSvg } from 'assets/pancake/ex1.svg';
+import { ReactComponent as PancakeDownIconSvg } from 'assets/pancake/down.svg';
+import { ReactComponent as PancakeUpDownIconSvg } from 'assets/pancake/up-down.svg';
+import { ReactComponent as PancakeLangIconSvg } from 'assets/pancake/lang.svg';
 
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 import Icon from '@ant-design/icons';
@@ -45,9 +46,13 @@ export const PancakeBNBIcon = (props: Partial<CustomIconComponentProps>) => (
 );
 
 export const PancakeDownIcon = (props: Partial<CustomIconComponentProps>) => (
-  <Icon component={PancakeExIconSvg} {...props} />
+  <Icon component={PancakeDownIconSvg} {...props} />
 );
 
 export const PancakeUpDownIcon = (props: Partial<CustomIconComponentProps>) => (
-  <Icon component={PancakeEx1IconSvg} {...props} />
+  <Icon component={PancakeUpDownIconSvg} {...props} />
+);
+
+export const PancakeLangIcon = (props: Partial<CustomIconComponentProps>) => (
+  <Icon component={PancakeLangIconSvg} {...props} />
 );

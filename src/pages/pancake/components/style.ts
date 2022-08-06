@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Button } from 'antd';
 
-export const SdIconButton = styled(Button)`
+export const PancakeIconButton = styled(Button)`
   padding: 0 0.5rem;
   svg {
     vertical-align: top;

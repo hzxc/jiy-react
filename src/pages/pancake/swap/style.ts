@@ -66,6 +66,10 @@ export const UpDownButton = styled(IconButton)`
     display: none;
   }
 
+  &:focus {
+    background-color: rgb(238, 234, 244);
+  }
+
   &:hover {
     background-color: rgb(31, 199, 212);
     > span:first-of-type {
@@ -80,17 +84,13 @@ export const UpDownButton = styled(IconButton)`
     }
   }
   &:active {
-    background-color: rgb(31, 199, 212);
+    background-color: rgb(31, 199, 212) !important;
     opacity: 0.85;
     transform: translateY(1px);
     box-shadow: none;
     > .anticon {
       color: #fff;
     }
-  }
-
-  &:focus {
-    /* background-color: rgb(238, 234, 244); */
   }
 `;
 
