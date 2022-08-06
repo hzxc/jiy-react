@@ -17,7 +17,9 @@ export const Pancake = () => {
       <Main>
         <Swap />
       </Main>
-      <Footer>footer</Footer>
+      <Footer>
+        <div>footer</div>
+      </Footer>
     </Container>
   );
 };

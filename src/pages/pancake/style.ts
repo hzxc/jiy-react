@@ -83,6 +83,8 @@ export const NavBar = styled(Menu)`
 
 export const Main = styled(Row)`
   flex-grow: 1;
+  flex-shrink: 0;
+  min-height: calc(100vh - 4.3rem - 5.6rem);
   align-items: flex-start;
   justify-content: center;
   padding: 32px 32px 0px;
@@ -91,5 +93,7 @@ export const Main = styled(Row)`
 `;
 
 export const Footer = styled(Row)`
+  flex-shrink: 0;
   background: rgb(39, 38, 44);
+  height: 50rem !important;
 `;

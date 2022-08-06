@@ -3,6 +3,7 @@ import { Row } from 'components/flex';
 import { Menu } from 'antd';
 
 export const Header = styled(Row)`
+  flex-shrink: 0;
   height: 5.6rem;
   padding: 0rem 1.6rem;
   border-bottom: 1px solid rgb(231, 227, 235);
