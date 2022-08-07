@@ -103,13 +103,12 @@ export const SwapLink = styled(Row)`
   justify-content: space-between;
   height: 12.4rem;
   padding-top: 1.6rem;
+`;
 
-  > div:first-of-type {
-    width: 50rem;
-  }
-
-  > div:last-of-type {
-    width: 30rem;
+export const SwapLinkLeft = styled(Row)``;
+export const SwapLinkRight = styled(Row)`
+  img {
+    height: 10.8rem;
   }
 `;
 
