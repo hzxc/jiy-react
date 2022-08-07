@@ -1,4 +1,4 @@
-import { PancakePerpetualIcon } from '../components/pancake-icon';
+import { PancakeDArrowIcon } from '../components/pancake-icon';
 
 export const MenuItems = [
   {
@@ -137,6 +137,6 @@ export const NavBarItems = [
   {
     label: 'Perpetual',
     key: 'Perpetual',
-    icon: <PancakePerpetualIcon />,
+    icon: <PancakeDArrowIcon />,
   },
 ];

@@ -105,17 +105,16 @@ export const SwapLink = styled(Row)`
   padding-top: 1.6rem;
 
   > div:first-of-type {
-    width: 30rem;
-    /* background-color: aqua; */
+    width: 50rem;
   }
 
   > div:last-of-type {
     width: 30rem;
-    /* background-color: bisque; */
   }
 `;
 
 export const PancakeSwitch = styled(Switch)`
+  border: 1px solid rgb(215, 202, 236);
   height: 3.4rem;
   line-height: 3.4rem;
   width: 15rem;
@@ -125,39 +124,61 @@ export const PancakeSwitch = styled(Switch)`
   }
 
   > .ant-switch-handle {
-    height: 3.4rem;
+    height: 3.2rem;
     border-radius: 1.7rem;
   }
-  &:not(.ant-switch-checked) {
+  /* &:not(.ant-switch-checked) { */
+  &.ant-switch {
+    background: none;
+    background-color: rgb(238, 234, 244);
     > .ant-switch-handle {
       top: 0;
       left: 0;
       width: 6rem;
+      &:hover {
+        opacity: 0.65;
+      }
     }
     > .ant-switch-handle::before {
+      color: rgb(255, 255, 255);
+      background-color: rgb(122, 110, 170);
       content: 'V2';
       border-radius: 1.7rem;
     }
     > .ant-switch-inner {
+      color: rgb(122, 110, 170);
       margin: 0;
-      margin-left: 6rem;
+      margin-left: 7rem;
+      &:hover {
+        opacity: 0.65;
+      }
     }
   }
   &.ant-switch-checked {
+    background-color: rgb(238, 234, 244);
     > .ant-switch-handle {
       top: 0;
       left: calc(100% - 7rem);
       width: 7rem;
+      &:hover {
+        opacity: 0.65;
+      }
     }
 
     > .ant-switch-handle::before {
+      color: rgb(255, 255, 255);
+      background-color: rgb(122, 110, 170);
       content: 'V1 (old)';
       border-radius: 1.7rem;
     }
 
     > .ant-switch-inner {
+      color: rgb(122, 110, 170);
       margin: 0;
       margin-right: 7rem;
+      &:hover {
+        opacity: 0.65;
+      }
     }
   }
 `;

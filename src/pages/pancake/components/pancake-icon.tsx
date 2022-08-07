@@ -3,7 +3,7 @@ import { ReactComponent as PancakeChartIconSvg } from 'assets/pancake/chart.svg'
 import { ReactComponent as PancakeSettingIconSvg } from 'assets/pancake/setting.svg';
 import { ReactComponent as PancakeRefreshIconSvg } from 'assets/pancake/refresh.svg';
 import { ReactComponent as PancakeHistoryIconSvg } from 'assets/pancake/history.svg';
-import { ReactComponent as PancakePerpetualIconSvg } from 'assets/pancake/perpetual.svg';
+import { ReactComponent as PancakeDArrowIconSvg } from 'assets/pancake/diagonal-arrow.svg';
 import { ReactComponent as PancakeArrowIconSvg } from 'assets/pancake/arrow.svg';
 import { ReactComponent as PancakeBNBIconSvg } from 'assets/pancake/bnb.svg';
 import { ReactComponent as PancakeDownIconSvg } from 'assets/pancake/down.svg';
@@ -33,8 +33,8 @@ export const PancakeHistoryIcon = (props: Partial<CustomIconComponentProps>) => 
   <Icon component={PancakeHistoryIconSvg} {...props} />
 );
 
-export const PancakePerpetualIcon = (props: Partial<CustomIconComponentProps>) => (
-  <Icon component={PancakePerpetualIconSvg} {...props} />
+export const PancakeDArrowIcon = (props: Partial<CustomIconComponentProps>) => (
+  <Icon component={PancakeDArrowIconSvg} {...props} />
 );
 
 export const PancakeArrowIcon = (props: Partial<CustomIconComponentProps>) => (

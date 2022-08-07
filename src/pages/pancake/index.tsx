@@ -4,6 +4,7 @@ import './styles/index.scss';
 import { MenuProps } from 'antd';
 import { NavBarItems } from './consts/consts';
 import { Swap } from './swap';
+import { PancakeDArrowIcon } from './components/pancake-icon';
 
 export const Pancake = () => {
   const items: MenuProps['items'] = NavBarItems;
@@ -18,11 +19,10 @@ export const Pancake = () => {
         <Swap />
         <SwapLink>
           <div>
-            <PancakeSwitch
-              checkedChildren='V2'
-              unCheckedChildren='V1 (old)'
-              defaultChecked
-            ></PancakeSwitch>
+            <PancakeSwitch checkedChildren='V2' unCheckedChildren='V1 (old)'></PancakeSwitch>
+            <a>Convert ERC-20 to BEP-20</a>
+            <PancakeDArrowIcon></PancakeDArrowIcon>
+            {/* <IconButton icon={<PancakeIcon />}>Convert ERC-20 to BEP-20</IconButton> */}
           </div>
           <div>right</div>
         </SwapLink>
