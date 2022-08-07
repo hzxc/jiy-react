@@ -1,4 +1,4 @@
-import { Container, Footer, Main, NavBar, NavBarContainer } from './style';
+import { Container, Footer, Main, NavBar, NavBarContainer, PancakeSwitch, SwapLink } from './style';
 import { PageHeader } from './page-header';
 import './styles/index.scss';
 import { MenuProps } from 'antd';
@@ -16,6 +16,16 @@ export const Pancake = () => {
       </NavBarContainer>
       <Main>
         <Swap />
+        <SwapLink>
+          <div>
+            <PancakeSwitch
+              checkedChildren='V2'
+              unCheckedChildren='V1 (old)'
+              defaultChecked
+            ></PancakeSwitch>
+          </div>
+          <div>right</div>
+        </SwapLink>
       </Main>
       <Footer>
         <div>footer</div>

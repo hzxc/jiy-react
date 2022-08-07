@@ -30,7 +30,6 @@ export const PancakeIconButton = styled(Button)`
 export const PancakeButton = styled(Button)<{
   height?: string;
 }>`
-  margin-top: 5rem;
   font-size: 1.6rem;
   height: ${(props) => (props.height ? props.height : undefined)};
   border: 0;

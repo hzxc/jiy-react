@@ -54,7 +54,7 @@ export const Swap = () => {
           <span>0.5%</span>
         </SwapLabel>
         <div>
-          <PancakeButton block type='primary' height='4.8rem'>
+          <PancakeButton block type='primary' height='4.8rem' style={{ marginTop: '5rem' }}>
             Connect Wallet
           </PancakeButton>
         </div>
