@@ -9,6 +9,7 @@ import { ReactComponent as PancakeBNBIconSvg } from 'assets/pancake/bnb.svg';
 import { ReactComponent as PancakeDownIconSvg } from 'assets/pancake/down.svg';
 import { ReactComponent as PancakeUpDownIconSvg } from 'assets/pancake/up-down.svg';
 import { ReactComponent as PancakeLangIconSvg } from 'assets/pancake/lang.svg';
+import { ReactComponent as PancakeTailIconSvg } from 'assets/pancake/tail.svg';
 
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 import Icon from '@ant-design/icons';
@@ -55,4 +56,8 @@ export const PancakeUpDownIcon = (props: Partial<CustomIconComponentProps>) => (
 
 export const PancakeLangIcon = (props: Partial<CustomIconComponentProps>) => (
   <Icon component={PancakeLangIconSvg} {...props} />
+);
+
+export const PancakeTailIcon = (props: Partial<CustomIconComponentProps>) => (
+  <Icon component={PancakeTailIconSvg} {...props} />
 );

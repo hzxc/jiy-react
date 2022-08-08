@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Menu, Switch } from 'antd';
+import { Button, Menu, Switch } from 'antd';
 import { Column, Row } from 'components/flex';
 
 export const Container = styled(Column)`
@@ -18,7 +18,6 @@ export const NavBar = styled(Menu)`
   height: 4.3rem;
   font-weight: 600;
   font-size: 1.6rem;
-  /* width: 37rem; */
   * {
     color: rgb(122, 110, 170);
   }
@@ -53,12 +52,6 @@ export const NavBar = styled(Menu)`
     background-color: rgb(239, 244, 245);
   }
 
-  /* > .ant-menu-item:not(.ant-menu-item-selected) {
-    &::after {
-      display: none;
-    }
-  } */
-
   > .ant-menu-item-selected {
     &:after {
       content: '';
@@ -67,7 +60,6 @@ export const NavBar = styled(Menu)`
       height: 4px;
       width: 100%;
       background-color: rgb(31, 199, 212);
-      /* border-radius: 2px 2px 0px 0px; */
     }
   }
 
@@ -100,13 +92,49 @@ export const Footer = styled(Row)`
 
 export const SwapLink = styled(Row)`
   width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
   height: 12.4rem;
   padding-top: 1.6rem;
 `;
 
 export const SwapLinkLeft = styled(Row)``;
+export const LinkButton = styled(Button)`
+  margin-left: 4rem;
+  padding: 0;
+  color: rgb(31, 199, 212);
+  font-weight: 700;
+  font-size: 1.6rem;
+
+  svg {
+    font-size: 2rem;
+    vertical-align: text-top;
+    flex-shrink: 0;
+    fill: rgb(31, 199, 212);
+  }
+  &:hover {
+    > span {
+      text-decoration: underline;
+    }
+    color: rgb(31, 199, 212);
+  }
+
+  &:focus,
+  &:active {
+    color: rgb(31, 199, 212);
+  }
+
+  .anticon {
+    margin-left: 0.4rem !important;
+  }
+`;
+
 export const SwapLinkRight = styled(Row)`
+  button {
+    height: 4.8rem;
+    padding: 0 2.4rem;
+    background-color: rgb(122, 110, 170) !important;
+  }
   img {
     height: 10.8rem;
   }
@@ -126,7 +154,6 @@ export const PancakeSwitch = styled(Switch)`
     height: 3.2rem;
     border-radius: 1.7rem;
   }
-  /* &:not(.ant-switch-checked) { */
   &.ant-switch {
     background: none;
     background-color: rgb(238, 234, 244);
