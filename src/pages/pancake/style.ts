@@ -94,11 +94,30 @@ export const SwapLink = styled(Row)`
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 12.4rem;
   padding-top: 1.6rem;
+  @media screen and (max-width: 852px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
-export const SwapLinkLeft = styled(Row)``;
+export const SwapLinkLeft = styled(Row)`
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
+`;
+
+export const SwapLinkRight = styled(Row)`
+  button {
+    height: 4.8rem;
+    padding: 0 2.4rem;
+    background-color: rgb(122, 110, 170) !important;
+  }
+  img {
+    height: 10.8rem;
+  }
+`;
+
 export const LinkButton = styled(Button)`
   margin-left: 4rem;
   padding: 0;
@@ -126,17 +145,6 @@ export const LinkButton = styled(Button)`
 
   .anticon {
     margin-left: 0.4rem !important;
-  }
-`;
-
-export const SwapLinkRight = styled(Row)`
-  button {
-    height: 4.8rem;
-    padding: 0 2.4rem;
-    background-color: rgb(122, 110, 170) !important;
-  }
-  img {
-    height: 10.8rem;
   }
 `;
 
