@@ -1,6 +1,22 @@
-import { Avatar, Button, List, Modal } from 'antd';
-import { useState } from 'react';
-import { TokenList } from './style';
+import { Avatar, Button, Divider, Input, List, Skeleton } from 'antd';
+import { useEffect, useState } from 'react';
+import { TokenModalContainer, ScrollComponent } from './style';
+
+interface DataType {
+  gender: string;
+  name: {
+    title: string;
+    first: string;
+    last: string;
+  };
+  email: string;
+  picture: {
+    large: string;
+    medium: string;
+    thumbnail: string;
+  };
+  nat: string;
+}
 
 export const TokenModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -16,52 +32,76 @@ export const TokenModal = () => {
     setIsModalVisible(false);
   };
   // list
-  const data = [
-    {
-      title: 'Ant Design Title 1',
-    },
-    {
-      title: 'Ant Design Title 2',
-    },
-    {
-      title: 'Ant Design Title 3',
-    },
-    {
-      title: 'Ant Design Title 4',
-    },
-    {
-      title: 'Ant Design Title 5',
-    },
-    {
-      title: 'Ant Design Title 6',
-    },
-  ];
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<DataType[]>([]);
+
+  const loadMoreData = () => {
+    if (loading) {
+      return;
+    }
+    setLoading(true);
+    fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
+      .then((res) => res.json())
+      .then((body) => {
+        setData([...data, ...body.results]);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    loadMoreData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
       <Button type='primary' onClick={showModal}>
         Open Modal
       </Button>
-      <Modal
+      <TokenModalContainer
         title='Select a Token'
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <TokenList
-          itemLayout='horizontal'
-          dataSource={data}
-          renderItem={(item: any) => (
-            <List.Item>
-              <List.Item.Meta
-                avatar={<Avatar src='https://joeschmoe.io/api/v1/random' />}
-                title={<a href='https://ant.design'>{item.title}</a>}
-                description='Ant Design, a design language for background applications, is refined by Ant UED Team'
-              />
-            </List.Item>
-          )}
-        ></TokenList>
-      </Modal>
+        <Input></Input>
+        <div
+          id='scrollableDiv'
+          style={{
+            height: 400,
+            overflow: 'auto',
+            padding: '0 16px',
+            border: '1px solid rgba(140, 140, 140, 0.35)',
+          }}
+        >
+          <ScrollComponent
+            dataLength={data.length}
+            next={loadMoreData}
+            hasMore={data.length < 100}
+            scrollThreshold={0.8}
+            loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
+            endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
+            scrollableTarget='scrollableDiv'
+          >
+            <List
+              dataSource={data}
+              renderItem={(item) => (
+                <List.Item key={item.email}>
+                  <List.Item.Meta
+                    avatar={<Avatar src={item.picture.large} />}
+                    title={<a href='https://ant.design'>{item.name.last}</a>}
+                    description={item.email}
+                  />
+                  <div>Content</div>
+                </List.Item>
+              )}
+            />
+          </ScrollComponent>
+        </div>
+      </TokenModalContainer>
     </>
   );
 };

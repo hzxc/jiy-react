@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import { List, Select } from 'antd';
+import { Modal } from 'antd';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
-export const TokenSelect = styled(Select)``;
-export const TokenList = styled(List)``;
+export const ScrollComponent = styled(InfiniteScroll)`
+  height: 20rem;
+`;
+export const TokenModalContainer = styled(Modal)``;
