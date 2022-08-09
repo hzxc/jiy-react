@@ -36,6 +36,7 @@ export const TokenModal = () => {
   const [data, setData] = useState<DataType[]>([]);
 
   const loadMoreData = () => {
+    console.log('loadMoreData');
     if (loading) {
       return;
     }
@@ -78,10 +79,10 @@ export const TokenModal = () => {
           }}
         >
           <ScrollComponent
+            // scrollThreshold={0.5}
             dataLength={data.length}
             next={loadMoreData}
-            hasMore={data.length < 100}
-            scrollThreshold={0.8}
+            hasMore={data.length < 50}
             loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
             endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
             scrollableTarget='scrollableDiv'
