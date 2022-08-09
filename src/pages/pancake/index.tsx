@@ -17,6 +17,7 @@ import { Swap } from './swap';
 import { PancakeDArrowIcon, PancakeTailIcon } from './components/pancake-icon';
 import help from 'assets/pancake/help.png';
 import { PancakeButton } from './components/style';
+import { TokenModal } from './modal';
 
 export const Pancake = () => {
   const items: MenuProps['items'] = NavBarItems;
@@ -29,6 +30,7 @@ export const Pancake = () => {
       </NavBarContainer>
       <Main>
         <Swap />
+        <TokenModal />
         <SwapLink>
           <SwapLinkLeft>
             <PancakeSwitch checkedChildren='V2' unCheckedChildren='V1 (old)'></PancakeSwitch>
