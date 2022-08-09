@@ -38,7 +38,6 @@ export const TokenModal = () => {
       >
         <TokenSelect
           style={{ width: '100%' }}
-          open={true}
           showSearch
           placeholder='Search name or paste address'
         >
