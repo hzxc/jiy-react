@@ -1,6 +1,7 @@
-import { Avatar, Button, Divider, Input, List, Skeleton } from 'antd';
+import { Avatar, Button, List } from 'antd';
 import { useEffect, useState } from 'react';
-import { TokenModalContainer, ScrollComponent } from './style';
+import { LinkButton } from '../components/style';
+import { TokenInput, TokenList, TokenModalContainer } from './style';
 
 interface DataType {
   gender: string;
@@ -36,7 +37,6 @@ export const TokenModal = () => {
   const [data, setData] = useState<DataType[]>([]);
 
   const loadMoreData = () => {
-    console.log('loadMoreData');
     if (loading) {
       return;
     }
@@ -63,44 +63,42 @@ export const TokenModal = () => {
         Open Modal
       </Button>
       <TokenModalContainer
+        className='modal-container'
+        maskStyle={{ backgroundColor: 'rgba(40, 13, 95, 0.6)' }}
         title='Select a Token'
         visible={isModalVisible}
+        footer={<LinkButton type='link'>Manage Tokens</LinkButton>}
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Input></Input>
+        <TokenInput placeholder='Search name or paste address'></TokenInput>
+
         <div
-          id='scrollableDiv'
           style={{
-            height: 400,
+            margin: '2.4rem -2.4rem',
+            height: '392px',
             overflow: 'auto',
-            padding: '0 16px',
-            border: '1px solid rgba(140, 140, 140, 0.35)',
+            padding: '0',
           }}
         >
-          <ScrollComponent
-            // scrollThreshold={0.5}
-            dataLength={data.length}
-            next={loadMoreData}
-            hasMore={data.length < 50}
-            loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
-            endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
-            scrollableTarget='scrollableDiv'
-          >
-            <List
-              dataSource={data}
-              renderItem={(item) => (
-                <List.Item key={item.email}>
-                  <List.Item.Meta
-                    avatar={<Avatar src={item.picture.large} />}
-                    title={<a href='https://ant.design'>{item.name.last}</a>}
-                    description={item.email}
-                  />
-                  <div>Content</div>
-                </List.Item>
-              )}
-            />
-          </ScrollComponent>
+          <TokenList
+            split={false}
+            dataSource={data}
+            renderItem={(item: any) => (
+              <List.Item
+                key={item.email}
+                onClick={() => {
+                  handleCancel();
+                }}
+              >
+                <List.Item.Meta
+                  avatar={<Avatar src={item.picture.large} />}
+                  title={<a href='https://ant.design'>{item.name.last}</a>}
+                  description={item.email}
+                />
+              </List.Item>
+            )}
+          />
         </div>
       </TokenModalContainer>
     </>

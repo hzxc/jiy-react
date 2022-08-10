@@ -52,3 +52,32 @@ export const PancakeButton = styled(Button)<{
     box-shadow: none;
   }
 `;
+
+export const LinkButton = styled(Button)`
+  padding: 0;
+  color: rgb(31, 199, 212);
+  font-weight: 700;
+  font-size: 1.6rem;
+
+  svg {
+    font-size: 2rem;
+    vertical-align: text-top;
+    flex-shrink: 0;
+    fill: rgb(31, 199, 212);
+  }
+  &:hover {
+    > span {
+      text-decoration: underline;
+    }
+    color: rgb(31, 199, 212);
+  }
+
+  &:focus,
+  &:active {
+    color: rgb(31, 199, 212);
+  }
+
+  .anticon {
+    margin-left: 0.4rem !important;
+  }
+`;
