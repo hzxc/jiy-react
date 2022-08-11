@@ -11,7 +11,7 @@ import {
 import { PageHeader } from './page-header';
 import './styles/index.scss';
 import { MenuProps } from 'antd';
-import { NavBarItems } from './consts/consts';
+import { NavBarItems } from './data';
 import { Swap } from './swap';
 import { PancakeDArrowIcon, PancakeTailIcon } from './components/pancake-icon';
 import help from 'assets/pancake/help.png';
