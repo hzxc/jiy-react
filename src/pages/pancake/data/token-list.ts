@@ -23,7 +23,7 @@ export const PancakeTokenBaseList: IPancakeTokenList = {
         'https://tokens.pancakeswap.finance/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png',
     },
     {
-      name: 'ALPACA',
+      name: 'Alpaca',
       symbol: 'ALPACA',
       address: '0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F',
       chainId: 56,

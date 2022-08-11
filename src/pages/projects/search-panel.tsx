@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, Input } from 'antd';
 import { PersonSelect } from 'components/person-select';
 import { ListRequest } from 'gen/ts/api/project/v1/project';

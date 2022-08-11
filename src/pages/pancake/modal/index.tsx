@@ -2,10 +2,7 @@ import { Avatar, Button, List } from 'antd';
 import { useState } from 'react';
 import { LinkButton } from '../components/style';
 import { PancakeTokenBaseList } from '../data';
-import { Token } from '../data/types';
-import { UserOutlined } from '@ant-design/icons';
 import { TokenInput, TokenList, TokenModalContainer } from './style';
-import { PancakeBNBIcon } from '../components/pancake-icon';
 import bnbSvg from 'assets/pancake/bnb.svg';
 
 export const TokenModal = () => {
@@ -23,7 +20,6 @@ export const TokenModal = () => {
   };
   // list
   const [loading, setLoading] = useState(false);
-  // const [data, setData] = useState<DataType[]>([]);
   const data = PancakeTokenBaseList;
 
   const loadMoreData = () => {
@@ -54,7 +50,7 @@ export const TokenModal = () => {
       </Button>
       <TokenModalContainer
         className='modal-container'
-        maskStyle={{ backgroundColor: 'rgba(15, 14, 19, 0.6)' }}
+        maskStyle={{ backgroundColor: 'rgba(40, 13, 95, 0.6)' }}
         title='Select a Token'
         visible={isModalVisible}
         footer={<LinkButton type='link'>Manage Tokens</LinkButton>}
@@ -62,13 +58,7 @@ export const TokenModal = () => {
         onCancel={handleCancel}
       >
         <TokenInput placeholder='Search name or paste address'></TokenInput>
-        <Avatar icon={<PancakeBNBIcon />} />
-        <Avatar
-          src={
-            'https://tokens.pancakeswap.finance/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png'
-          }
-        />
-        <Avatar src={bnbSvg} />
+
         <div
           style={{
             margin: '2.4rem -2.4rem',
@@ -88,7 +78,7 @@ export const TokenModal = () => {
                 }}
               >
                 <List.Item.Meta
-                  avatar={<Avatar src={item.logoURI} />}
+                  avatar={<Avatar src={item.symbol === 'BNB' ? bnbSvg : item.logoURI} />}
                   title={<span>{item.symbol}</span>}
                   description={item.name}
                 />

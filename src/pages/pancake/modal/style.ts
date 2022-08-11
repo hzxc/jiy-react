@@ -44,6 +44,14 @@ export const TokenSelect = styled(Select)`
 `;
 
 export const TokenInput = styled(Input)`
+  border: 1px solid rgb(215, 202, 236);
+  height: 4.8rem;
+  border-radius: 1.6rem;
+  background-color: rgb(238, 234, 244);
+  box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
+  font-size: 1.6rem;
+  color: rgb(40, 13, 95);
+  font-weight: 600;
   &::placeholder {
     font-size: 1.6rem;
     font-weight: 600;
@@ -59,20 +67,31 @@ export const TokenInput = styled(Input)`
     border-right-width: 1px;
     outline: 0;
   }
-  border: 1px solid rgb(215, 202, 236);
-  height: 4.8rem;
-  border-radius: 1.6rem;
-  background-color: rgb(238, 234, 244);
-  box-shadow: rgb(74 74 104 / 10%) 0px 2px 2px -1px inset;
 `;
 
 export const TokenList = styled(List)`
   .ant-list-item {
     cursor: pointer;
     padding: 4px 20px;
+    height: 5.6rem;
   }
 
   .ant-list-item:hover {
     background-color: rgb(250, 249, 250);
+  }
+
+  .ant-list-item-meta-avatar {
+    margin-top: 0.8rem;
+  }
+  h4 {
+    font-size: 1.6rem;
+    color: rgb(40, 13, 95);
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  .ant-list-item-meta-description {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgb(122, 110, 170);
   }
 `;
