@@ -83,7 +83,7 @@ export const MenuItems = [
   },
   {
     label: '•••',
-    key: '...',
+    key: 'more',
     popupOffset: [-16, 5],
     popupClassName: 'pancake-menu-popup',
     children: [
