@@ -1,23 +1,12 @@
 import { Avatar, Button, List } from 'antd';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LinkButton } from '../components/style';
+import { PancakeTokenBaseList } from '../data';
+import { Token } from '../data/types';
+import { UserOutlined } from '@ant-design/icons';
 import { TokenInput, TokenList, TokenModalContainer } from './style';
-
-interface DataType {
-  gender: string;
-  name: {
-    title: string;
-    first: string;
-    last: string;
-  };
-  email: string;
-  picture: {
-    large: string;
-    medium: string;
-    thumbnail: string;
-  };
-  nat: string;
-}
+import { PancakeBNBIcon } from '../components/pancake-icon';
+import bnbSvg from 'assets/pancake/bnb.svg';
 
 export const TokenModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -34,7 +23,8 @@ export const TokenModal = () => {
   };
   // list
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<DataType[]>([]);
+  // const [data, setData] = useState<DataType[]>([]);
+  const data = PancakeTokenBaseList;
 
   const loadMoreData = () => {
     if (loading) {
@@ -44,7 +34,7 @@ export const TokenModal = () => {
     fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
       .then((res) => res.json())
       .then((body) => {
-        setData([...data, ...body.results]);
+        // setData([...data, ...body.results]);
         setLoading(false);
       })
       .catch(() => {
@@ -52,10 +42,10 @@ export const TokenModal = () => {
       });
   };
 
-  useEffect(() => {
-    loadMoreData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   loadMoreData();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <>
@@ -64,7 +54,7 @@ export const TokenModal = () => {
       </Button>
       <TokenModalContainer
         className='modal-container'
-        maskStyle={{ backgroundColor: 'rgba(40, 13, 95, 0.6)' }}
+        maskStyle={{ backgroundColor: 'rgba(15, 14, 19, 0.6)' }}
         title='Select a Token'
         visible={isModalVisible}
         footer={<LinkButton type='link'>Manage Tokens</LinkButton>}
@@ -72,7 +62,13 @@ export const TokenModal = () => {
         onCancel={handleCancel}
       >
         <TokenInput placeholder='Search name or paste address'></TokenInput>
-
+        <Avatar icon={<PancakeBNBIcon />} />
+        <Avatar
+          src={
+            'https://tokens.pancakeswap.finance/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png'
+          }
+        />
+        <Avatar src={bnbSvg} />
         <div
           style={{
             margin: '2.4rem -2.4rem',
@@ -83,18 +79,18 @@ export const TokenModal = () => {
         >
           <TokenList
             split={false}
-            dataSource={data}
+            dataSource={data.tokens}
             renderItem={(item: any) => (
               <List.Item
-                key={item.email}
+                key={item.address}
                 onClick={() => {
                   handleCancel();
                 }}
               >
                 <List.Item.Meta
-                  avatar={<Avatar src={item.picture.large} />}
-                  title={<a href='https://ant.design'>{item.name.last}</a>}
-                  description={item.email}
+                  avatar={<Avatar src={item.logoURI} />}
+                  title={<span>{item.symbol}</span>}
+                  description={item.name}
                 />
               </List.Item>
             )}
