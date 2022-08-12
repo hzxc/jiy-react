@@ -1,7 +1,7 @@
-import { IPancakeTokenList } from './types';
+import { ITokenList } from './types';
 
-export const PancakeTokenBaseList: IPancakeTokenList = {
-  name: 'PancakeSwap Extended',
+export const PancakeTokenBaseList: ITokenList = {
+  name: 'PancakeSwap Base',
   logoURI: 'https://pancakeswap.finance/logo.png',
   keywords: ['pancakeswap', 'base'],
   tokens: [

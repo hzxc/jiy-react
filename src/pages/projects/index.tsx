@@ -10,17 +10,6 @@ import { ProjectModal } from './project-modal';
 import { useProjectModal, useProjectsSearchParams } from './project-utils';
 import { SearchPanel } from './search-panel';
 export const Projects = () => {
-  // const client = useHttp();
-  // const handleTest = () => {
-  //   client('ProjectService', 'people').then(
-  //     (resp) => {
-  //       console.log('response:', resp);
-  //     },
-  //     (err) => {
-  //       console.log('error message', err?.message);
-  //     }
-  //   );
-  // };
   const { open } = useProjectModal();
   const [param, setParam] = useProjectsSearchParams();
   const debouncedParam = useDebounce(param, 500);

@@ -2,8 +2,9 @@ import { Avatar, Button, List } from 'antd';
 import { useState } from 'react';
 import { LinkButton } from '../components/style';
 import { PancakeTokenBaseList } from '../data';
-import { TokenInput, TokenList, TokenModalContainer } from './style';
+import { TokenList, TokenModalContainer } from './style';
 import bnbSvg from 'assets/pancake/bnb.svg';
+import { SearchPanel } from './search-panel';
 
 export const TokenModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -19,29 +20,8 @@ export const TokenModal = () => {
     setIsModalVisible(false);
   };
   // list
-  const [loading, setLoading] = useState(false);
+
   const data = PancakeTokenBaseList;
-
-  const loadMoreData = () => {
-    if (loading) {
-      return;
-    }
-    setLoading(true);
-    fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
-      .then((res) => res.json())
-      .then((body) => {
-        // setData([...data, ...body.results]);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
-      });
-  };
-
-  // useEffect(() => {
-  //   loadMoreData();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   return (
     <>
@@ -49,7 +29,6 @@ export const TokenModal = () => {
         Open Modal
       </Button>
       <TokenModalContainer
-        className='modal-container'
         maskStyle={{ backgroundColor: 'rgba(40, 13, 95, 0.6)' }}
         title='Select a Token'
         visible={isModalVisible}
@@ -57,8 +36,7 @@ export const TokenModal = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <TokenInput placeholder='Search name or paste address'></TokenInput>
-
+        <SearchPanel></SearchPanel>
         <div
           style={{
             margin: '2.4rem -2.4rem',

@@ -16,7 +16,7 @@ import { Swap } from './swap';
 import { PancakeDArrowIcon, PancakeTailIcon } from './components/pancake-icon';
 import help from 'assets/pancake/help.png';
 import { LinkButton, PancakeButton } from './components/style';
-import { TokenModal } from './modal';
+import { TokenModal } from './token';
 
 export const Pancake = () => {
   const items: MenuProps['items'] = NavBarItems;

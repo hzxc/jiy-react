@@ -1,11 +1,11 @@
-export interface IPancakeTokenList {
+export interface ITokenList {
   name: string;
   logoURI: string;
   keywords: string[];
-  tokens: Token[];
+  tokens: IToken[];
 }
 
-export interface Token {
+export interface IToken {
   name: string;
   symbol: string;
   address: string;

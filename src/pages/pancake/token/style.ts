@@ -27,10 +27,16 @@ export const TokenModalContainer = styled(Modal)`
     padding: 1rem 0px;
     left: calc(100% - 7rem);
     color: rgb(31, 199, 212);
+    &:active {
+      opacity: 0.85;
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+    &:hover {
+      opacity: 0.65;
+    }
   }
-  .ant-modal-close:hover {
-    opacity: 0.65;
-  }
+
   .ant-modal-title {
     padding: 1rem 0px;
     font-size: 2rem;

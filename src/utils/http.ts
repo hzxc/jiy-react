@@ -1,63 +1,49 @@
-import { GrpcWebFetchTransport } from '@protobuf-ts/grpcweb-transport';
-import { RpcOptions } from '@protobuf-ts/runtime-rpc';
-import * as cli from 'client';
 import { useAuth } from 'pages/context/auth-context';
-import * as auth from 'pages/auth-provider';
+import qs from 'qs';
 import { useCallback } from 'react';
+import * as auth from '../pages/auth-provider';
 
-// const apiUrl = 'http://localhost:3000';
-const apiUrl = process.env.REACT_APP_API_URL as string;
-const trans = new GrpcWebFetchTransport({
-  baseUrl: apiUrl,
-  // format: 'binary',
-});
+const apiUrl = process.env.REACT_APP_API_URL;
 
-interface Config extends RpcOptions {
+interface Config extends RequestInit {
   token?: string;
   data?: object;
 }
 
-export const http = (
-  svcName: string,
-  methodName: string,
-  { data, token, meta, ...customConfig }: Config = {}
-) => {
+export const http = (endpoint: string, { data, token, headers, ...customConfig }: Config = {}) => {
   const config = {
-    meta: { Authorization: token ? `Bearer ${token}` : 'Bearer NoToken' },
+    method: 'GET',
+    headers: {
+      Authorization: token ? `Bearer ${token}` : '',
+      'Content-Type': data ? 'application/json' : '',
+    },
     ...customConfig,
   };
-  const client: any = new (cli as any)[svcName + 'Client'](trans);
-  // new Promise<void>((resolve, reject) => {
-
-  // })
-
-  return (client[methodName]?.(data, config) as Promise<any>)
-    .then(async (resp) => {
-      // const respJson = JSON.stringify(resp.response);
-      if (resp.status?.code === 'OK') {
-        if (resp.response?.data) {
-          return resp.response.data;
-        } else {
-          return resp.response;
-        }
-      } else {
-        return Promise.reject(new Error(resp.status.code));
-      }
-    })
-    .catch(async (err: any) => {
-      if (err?.code === 'UNAUTHENTICATED') {
-        await auth.logout();
-        window.location.reload();
-      }
-      return Promise.reject(new Error(err?.message));
-    });
+  if (config.method.toUpperCase() === 'GET') {
+    endpoint += `?${qs.stringify(data)}`;
+  } else {
+    config.body = JSON.stringify(data || {});
+  }
+  return window.fetch(`${apiUrl}/${endpoint}`, config).then(async (response) => {
+    if (response.status === 401) {
+      await auth.logout();
+      window.location.reload();
+      return Promise.reject({ message: 'UNAUTHENTICATED' });
+    }
+    const data = await response.json();
+    if (response.ok) {
+      return data;
+    } else {
+      return Promise.reject(data);
+    }
+  });
 };
 
 export const useHttp = () => {
   const { user } = useAuth();
   return useCallback(
-    (...[svcName, methodName, config]: Parameters<typeof http>) =>
-      http(svcName, methodName, { ...config, token: user?.token }),
+    (...[endpoint, config]: Parameters<typeof http>) =>
+      http(endpoint, { ...config, token: user?.token }),
     [user?.token]
   );
 };

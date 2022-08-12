@@ -1,4 +1,4 @@
-import { http } from 'utils/http';
+import { http2 } from 'utils/http2';
 import { User } from '../types/users';
 
 const localStorageKey = '__auth_provider_token__';
@@ -14,7 +14,7 @@ const handleUserResponse = (user: User) => {
 };
 
 export const login = async (data: { username: string; password: string }) => {
-  return http('AuthService', 'login', { data })
+  return http2('AuthService', 'login', { data })
     .then((resp) => {
       return handleUserResponse(resp);
     })
