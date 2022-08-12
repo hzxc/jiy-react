@@ -20,17 +20,18 @@ export const TokenModal = () => {
     setIsModalVisible(false);
   };
   const [search, setSearch] = useState('');
-
-  let data = PancakeTokenBaseList.tokens;
+  const [data, setData] = useState(PancakeTokenBaseList.tokens);
 
   useEffect(() => {
-    // const dataRef = useRef(data).current;
+    // const dataRef = useRef(data);
     console.log(search);
     if (search === '') {
-      // data = dataRef;
+      setData(PancakeTokenBaseList.tokens);
     } else {
-      data = PancakeTokenBaseList.tokens.filter((item) =>
-        item.name.toLowerCase().includes(search.toLocaleLowerCase())
+      setData(
+        PancakeTokenBaseList.tokens.filter((item) =>
+          item.symbol.toLowerCase().includes(search.toLocaleLowerCase())
+        )
       );
     }
   }, [search]);
