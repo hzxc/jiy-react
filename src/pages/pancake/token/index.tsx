@@ -1,10 +1,9 @@
 import { Avatar, Button, List } from 'antd';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LinkButton } from '../components/style';
 import { PancakeTokenBaseList } from '../data';
-import { TokenList, TokenModalContainer } from './style';
+import { TokenInput, TokenList, TokenModalContainer } from './style';
 import bnbSvg from 'assets/pancake/bnb.svg';
-import { SearchPanel } from './search-panel';
 
 export const TokenModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -16,12 +15,25 @@ export const TokenModal = () => {
   const handleOk = () => {
     setIsModalVisible(false);
   };
+
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-  // list
+  const [search, setSearch] = useState('');
 
-  const data = PancakeTokenBaseList;
+  let data = PancakeTokenBaseList.tokens;
+
+  useEffect(() => {
+    // const dataRef = useRef(data).current;
+    console.log(search);
+    if (search === '') {
+      // data = dataRef;
+    } else {
+      data = PancakeTokenBaseList.tokens.filter((item) =>
+        item.name.toLowerCase().includes(search.toLocaleLowerCase())
+      );
+    }
+  }, [search]);
 
   return (
     <>
@@ -36,7 +48,11 @@ export const TokenModal = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <SearchPanel></SearchPanel>
+        <TokenInput
+          value={search}
+          onChange={(evt) => setSearch(evt.target.value)}
+          placeholder='Search name or paste address'
+        ></TokenInput>
         <div
           style={{
             margin: '2.4rem -2.4rem',
@@ -47,7 +63,7 @@ export const TokenModal = () => {
         >
           <TokenList
             split={false}
-            dataSource={data.tokens}
+            dataSource={data}
             renderItem={(item: any) => (
               <List.Item
                 key={item.address}

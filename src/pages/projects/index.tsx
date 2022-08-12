@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { ButtonNoPadding, ErrorBox } from 'components/lib';
 import { Row } from 'components/flex';
-// import { CreateRequest } from 'gen/ts/api/project/v1/project';
 import { useDebounce } from 'utils';
 import { usePeople } from 'utils/use-people';
 import { useProjects } from 'utils/use-project';

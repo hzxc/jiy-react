@@ -23,13 +23,13 @@ export const Pancake = () => {
 
   return (
     <Container>
+      <TokenModal />
       <PageHeader></PageHeader>
       <NavBarContainer>
         <NavBar defaultSelectedKeys={['Swap']} mode='horizontal' items={items} />
       </NavBarContainer>
       <Main>
         <Swap />
-        <TokenModal />
         <SwapLink>
           <SwapLinkLeft>
             <PancakeSwitch checkedChildren='V2' unCheckedChildren='V1 (old)'></PancakeSwitch>
