@@ -13,4 +13,5 @@ export const useTokenSearchParams = () => {
 export const useToken = (search: string) => {
   let data = PancakeTokenBaseList.tokens;
   const dataRef = useRef(data);
+  console.log(dataRef);
 };
