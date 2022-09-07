@@ -1,7 +1,7 @@
 import { Avatar, Button, List } from 'antd';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LinkButton } from '../components/style';
-import { PancakeTokenBaseList } from '../data';
+import { CoinGeckoList, PancakeSwapExtendedList, PancakeTokenBaseList } from '../data';
 import { TokenInput, TokenList, TokenModalContainer } from './style';
 import bnbSvg from 'assets/pancake/bnb.svg';
 
@@ -47,6 +47,7 @@ export const TokenModal = () => {
         visible={isModalVisible}
         footer={<LinkButton type='link'>Manage Tokens</LinkButton>}
         onOk={handleOk}
+        forceRender={true}
         onCancel={handleCancel}
       >
         <TokenInput
