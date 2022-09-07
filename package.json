@@ -15,7 +15,7 @@
     "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
-    "antd": "^4.22.4",
+    "antd": "^4.23.0",
     "dayjs": "^1.11.4",
     "rc-select": "^14.1.9",
     "rc-virtual-list": "^3.4.8",
