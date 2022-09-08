@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Input, List, Modal, Select } from 'antd';
+import { FixedSizeList } from 'react-window';
 
 export const TokenModalContainer = styled(Modal)`
   width: 100%;
@@ -20,6 +21,7 @@ export const TokenModalContainer = styled(Modal)`
     top: -2rem;
   }
   .ant-modal-body {
+    /* padding: 24px 0 0 0; */
     padding-bottom: 0;
   }
 
@@ -100,4 +102,8 @@ export const TokenList = styled(List)`
     font-weight: 400;
     color: rgb(122, 110, 170);
   }
+`;
+
+export const ReactWindowFixedSizeList = styled(FixedSizeList)`
+  margin: 2.4rem -2.4rem;
 `;

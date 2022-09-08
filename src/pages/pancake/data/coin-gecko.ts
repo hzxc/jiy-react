@@ -1,4 +1,6 @@
-export const CoinGeckoList = {
+import { ITokenList } from './types';
+
+export const CoinGeckoList: ITokenList = {
   name: 'CoinGecko',
   logoURI:
     'https://www.coingecko.com/assets/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png',

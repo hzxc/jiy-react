@@ -1,4 +1,6 @@
-export const CoinMarketCapList = {
+import { ITokenList } from './types';
+
+export const CoinMarketCapList: ITokenList = {
   name: 'CoinMarketCap',
   logoURI: 'https://ipfs.io/ipfs/QmQAGtNJ2rSGpnP6dh6PPKNSmZL8RTZXmgFwgTdy5Nz5mx',
   keywords: ['defi'],

@@ -1,8 +1,8 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useUrlQueryParam } from 'utils/use-url-query-param';
 import { PancakeTokenBaseList } from '../data';
 
-export const useTokenSearchParams = () => {
+export const useTokenParams = () => {
   const [param, setParam] = useUrlQueryParam(['inputCurrency', 'outputCurrency']);
   return [
     useMemo(() => ({ ...param, token: Number(param.inputCurrency.trim()) || undefined }), [param]),

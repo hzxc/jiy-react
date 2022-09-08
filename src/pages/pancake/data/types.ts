@@ -11,5 +11,5 @@ export interface IToken {
   address: string;
   chainId: number;
   decimals: number;
-  logoURI: string;
+  logoURI?: string;
 }
